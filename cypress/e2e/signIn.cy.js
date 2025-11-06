@@ -11,7 +11,7 @@ describe('Sign In page',
   },
   () => {
     before(() => {
-      cy.visit('user/#/login');
+      cy.visit('/#/login');
     });
 
     it('should provide an ability to log in', () => {
