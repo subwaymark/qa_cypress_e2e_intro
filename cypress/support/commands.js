@@ -46,7 +46,7 @@ function generateRandomString
   let generatedUserName = '';
 
   if (!haveMinLength) {
-    return new Error(`Username has less than 4 letters`);
+    throw new Error(`Username has less than 4 letters`);
   }
 
   if (hasSpecialCharacter === true) {
@@ -85,8 +85,7 @@ function generateRandomString
   const loopEnd1 = length - howManySpecialCharacter;
 
   for (let i = 0; i < loopEnd1; i++) {
-    const letterScope = letters.length - 1; // indeksy
-    const randomLetterIndex = Math.floor(Math.random() * letterScope); // indeksy
+    const randomLetterIndex = Math.floor(Math.random() * letters.length);
 
     if (i === 0 && oneUpperCase === true) {
       generatedUserName += letters[randomLetterIndex].toUpperCase();

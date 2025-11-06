@@ -11,7 +11,7 @@ describe('Sign In page',
   },
   () => {
     before(() => {
-      cy.visit('user/login');
+      cy.visit('user/#/login');
     });
 
     it('should provide an ability to log in', () => {
@@ -39,8 +39,8 @@ describe('Sign In page',
             .type(password);
           cy.get('form button[type="submit"]')
             .click();
-          cy.location('href')
-            .should('equal', 'https://conduit.mate.academy/');
+          cy.location('hash')
+            .should('equal', '#/');
           cy.get('.nav-link[href*="/profile/"]')
             .should((user) => {
               const displayedUsernameOnPage = user[0].getAttribute('href');
